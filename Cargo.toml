@@ -1,0 +1,10 @@
+[package]
+name = "rust-irc-state"
+version = "0.0.1"
+authors = ["Stacey Ell <stacey.ell@gmail.com>"]
+
+[dependencies]
+log = "*"
+
+[dependencies.irc]
+git = "https://github.com/infinityb/rust-irc"
