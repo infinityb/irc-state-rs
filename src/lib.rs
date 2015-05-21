@@ -704,7 +704,7 @@ impl State {
             Err(msg) => panic!("invalid state: {:?}, dump = {:?}", msg, self)
         };
     }
-    
+
     fn validate_state_internal(&self) -> Result<(), String> {
         for (&id, state) in self.channels.iter() {
             if id != state.id {
@@ -736,7 +736,7 @@ impl State {
         }
         for (name, &id) in self.channel_map.iter() {
             if let Some(state) = self.channels.get(&id) {
-                if *name != IrcIdentifier::from_str(state.name.as_slice()) {
+                if *name != IrcIdentifier::from_str(&state.name) {
                     return Err(format!("{:?} at channel_map[{:?}]", state.id, name));
                 }
             } else {
